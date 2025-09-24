@@ -5,15 +5,9 @@ from django.conf.urls.static import static
 
 urlpatterns = [
     path("admin/", admin.site.urls),
-<<<<<<< HEAD
     path("", include("miapp.urls")),  # Redirige a tu app principal
 ]
 
 # Soporte para archivos de imágenes (productos)
-=======
-    path("", include("miapp.urls")),
-]
-
->>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

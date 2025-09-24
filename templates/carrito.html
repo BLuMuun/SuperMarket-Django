@@ -9,7 +9,10 @@
   <h1 class="text-2xl font-bold mb-6 text-blue-400">Tu carrito</h1>
 
   <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+<<<<<<< HEAD
     <!-- Carrito en sesión -->
+=======
+>>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
     <div class="bg-gray-800 rounded-xl p-4">
       <h2 class="text-xl font-semibold mb-4">Carrito en Sesión</h2>
       {% if carrito_items %}
@@ -27,7 +30,10 @@
       {% endif %}
     </div>
 
+<<<<<<< HEAD
     <!-- Carrito en BD -->
+=======
+>>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
     <div class="bg-gray-800 rounded-xl p-4">
       <h2 class="text-xl font-semibold mb-4">Carrito en Base de Datos</h2>
       {% if detalles %}
@@ -45,26 +51,41 @@
       {% endif %}
     </div>
   </div>
+<<<<<<< HEAD
    <!-- Botón de Checkout -->
   <div class="mt-8 flex space-x-4">
     {% if cliente %}
       <!-- Cliente logueado: finalizar compra -->
+=======
+  <div class="mt-8 flex space-x-4">
+    {% if cliente %}
+>>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
       <form method="post" action="{% url 'finalizar_compra' %}">
         {% csrf_token %}
         <button type="submit"
                 class="px-6 py-3 bg-blue-500 hover:bg-blue-600 rounded-xl font-bold text-white">
+<<<<<<< HEAD
           Finalizar compra
         </button>
       </form>
     {% else %}
       <!-- No logueado: ir a registro/inicio sesión -->
+=======
+          Finalizar compra / Borrar carrito
+        </button>
+      </form>
+    {% else %}
+>>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
       <a href="{% url 'registrar_cliente' %}"
          class="px-6 py-3 bg-green-500 hover:bg-green-600 rounded-xl font-bold text-white">
         Iniciar sesión / Registrarse para comprar
       </a>
     {% endif %}
 
+<<<<<<< HEAD
     <!-- Botón volver -->
+=======
+>>>>>>> ff8b5ed50f4a7397610d007f04f2a189ebe114da
     <a href="{% url 'home' %}"
        class="px-6 py-3 bg-gray-600 hover:bg-gray-700 rounded-xl font-bold text-white">
       Volver a la página principal
