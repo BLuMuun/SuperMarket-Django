@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Carrito en Base de Datos</title>
+    <style>
+        body {
+            background-color: #121212;
+            color: #f5f5f5;
+            font-family: Arial, sans-serif;
+        }
+        table {
+            width: 80%;
+            margin: 20px auto;
+            border-collapse: collapse;
+            background: #1e1e1e;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 10px;
+            text-align: center;
+        }
+        th {
+            background: #272727;
+        }
+        .btn {
+            display: inline-block;
+            padding: 10px 15px;
+            margin: 10px;
+            background: #007bff;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .btn:hover {
+            background: #0056b3;
+        }
+        .btn-danger {
+            background: #dc3545;
+        }
+        .btn-danger:hover {
+            background: #a71d2a;
+        }
+    </style>
+</head>
+<body>
+    <h1 style="text-align:center;">Carrito guardado en la BD</h1>
+
+    {% if detalles %}
+        <table>
+            <thead>
+                <tr>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th>Subtotal</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for d in detalles %}
+                <tr>
+                    <td>{{ d.producto.nombre }}</td>
+                    <td>{{ d.cantidad }}</td>
+                    <td>${{ d.subtotal }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+        <h2 style="text-align:center;">Total: ${{ total_bd }}</h2>
+
+        <div style="text-align:center;">
+            <a href="{% url 'finalizar_compra' %}" class="btn btn-danger">Finalizar compra</a>
+        </div>
+    {% else %}
+        <p style="text-align:center;">Tu carrito en BD está vacío.</p>
+    {% endif %}
+
+    <div style="text-align:center;">
+        <a href="{% url 'home' %}" class="btn">Seguir comprando</a>
+        <a href="/admin/" class="btn">Admin</a>
+    </div>
+</body>
+</html>
